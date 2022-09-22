@@ -1,0 +1,46 @@
+<br />
+<header class="container bg-light p-3 rounded">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-evenly rounded">
+        <div class="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/welcome">Perfil Usuario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/productos/vista">Lista Productos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos Categoria
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/productos/consolas">Consolas</a></li>
+                            <li><a class="dropdown-item" href="/productos/joysticks">Joysticks</a></li>
+                            <li><a class="dropdown-item" href="/productos/auriculares">Auriculares</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/carrito/vista">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chat-view">Chat</a>
+                    </li>
+                    <li>
+                        <div class="nav-item">
+                            <form id="form-product" action="/api/logout" method="POST">
+                                <button id="btn-addproduct" type="submit" class="btn btn-primary mx-2">Desloguear</button>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

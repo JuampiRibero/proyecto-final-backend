@@ -1,0 +1,8 @@
+[2022-09-22T18:57:05.623] [ERROR] myError - ReferenceError: res is not defined
+    at module.exports.createProduct (C:\Proyectos\proyecto-final-backend\src\services\productService.js:18:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async createProduct (C:\Proyectos\proyecto-final-backend\src\controller\productController.js:23:9)
+[2022-09-22T18:57:19.153] [ERROR] myError - ReferenceError: res is not defined
+    at module.exports.createProduct (C:\Proyectos\proyecto-final-backend\src\services\productService.js:18:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async createProduct (C:\Proyectos\proyecto-final-backend\src\controller\productController.js:23:9)

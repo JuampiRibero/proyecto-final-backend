@@ -1,0 +1,30 @@
+<br />
+<div class="container bg-light p-3 rounded">
+  <h2 class="row">Perfil Usuario</h2>
+  <div class="row">
+    <div class="col">
+      <p>¡Hola {{data.user.name}} {{data.user.lastname}}!</p>
+      <p>Información de tu perfil:</p>
+      <p>Edad: {{data.user.age}}</p>
+      <p>Número de teléfono: {{data.user.number}}</p>
+      <p>Dirección: {{data.user.address}}</p>
+      <p>Correo electrónico: {{data.user.email}}</p>
+      <a class="btn btn-primary" href="/chat/{{data.user.email}}">Ingresar al Chat</a>
+    </div>
+    <div class="col">
+      <img class="img-fluid" src="{{data.user.avatar}}" alt="" srcset="{{data.user.avatar}}" />
+    </div>
+  </div>
+    {{#if data.user.admin}}
+  <div class="row">
+    <div class="col">
+      <h5>Perfil de Administrador</h5>
+      <h6>Herramientas Disponibles:</h6>
+      <a class="btn btn-primary" href="/productos/agregar">Agregar Productos a la Tienda</a>
+      <a class="btn btn-primary" href="/info">Información del Servidor</a>
+      <a class="btn btn-primary" href="/server-config">Información de Configuración de la APP</a>
+    </div>
+  </div>
+  {{/if}}
+  </div>
+</div>

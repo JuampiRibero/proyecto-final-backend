@@ -1,0 +1,41 @@
+<br />
+<div class="container bg-light p-3 rounded">
+    <h2 class="">Centro de Mensajes</h2>
+        <form id="form-product" action="/api/login" method="POST">
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico:</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Ingrese su correo electrónico" required />
+            </div>
+            <div class="mb-3">
+                <label for="firstName" class="form-label">Nombre:</label>
+                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Ingrese su nombre" required />
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Apellido:</label>
+                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Ingrese su apellido" required />
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Edad:</label>
+                <input type="text" name="age" id="age" class="form-control" placeholder="Ingrese su edad" required />
+            </div>
+            <div class="mb-3">
+                <label for="alias" class="form-label">Alias:</label>
+                <input type="text" name="alias" id="alias" class="form-control" placeholder="Ingrese su alias" required />
+            </div>
+            <div class="mb-3">
+                <label for="avatar" class="form-label">Avatar:</label>
+                <input type="text" name="avatar" id="avatar" class="form-control" placeholder="Ingrese su avatar" required />
+            </div>
+            <div class="mb-3">
+                <label for="message-chat" class="form-label">Mensaje:</label>
+                <input type="text" name="message-chat" id="message-chat" class="form-control" placeholder="Ingrese su mensaje" required />
+            </div>
+            <button class="btn btn-primary" id="btn-sendchat">Enviar Mensaje</button>
+        </form>
+    <h2 class="mt-3">Chat</h2>
+    <div style="border: 1px solid black;" id="chat-board">
+        {{#each allMsgChat}}
+            <p>{{this.author.id}} dice: {{this.text}}</p>
+        {{/each}}
+    </div>
+</div>
