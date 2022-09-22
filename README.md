@@ -2,7 +2,7 @@
 
 ## Resumen del Desarrollo
 
-La aplicación fué desarrolla en **NodeJS** usando el framework **Express** y base de datos **MongoDB** en su versión online **MongoAtlas**. Para autenticación y autorización se utilizó **passport-local** junto **bcrypt** para encriptar las contraseñas. Las notificaciones enviadas por correo electrónico se manejan con **Nodemailer** y las enviadas por SMS y Whatsapp con **Twilio**. Como motor de plantillas se utilizó **Handlesbars**. El chat está implementado con **Websocket**.
+La aplicación fué desarrolla en **NodeJS** usando el framework **Express** y base de datos **MongoDB** en su versión online **MongoAtlas**. Para autenticación y autorización se utilizó **passport-local** junto **bcrypt** para encriptar las contraseñas. Las notificaciones enviadas por correo electrónico se manejan con **Nodemailer** y las enviadas por SMS y Whatsapp con **Twilio**. Como motor de plantillas se utilizó **Handlebars**. El chat está implementado con **Websocket**.
 
 ## Uso de la App
 
