@@ -1,7 +1,5 @@
-/*Numero de procesadores en servidor */
 const numberCPUs = require("os").cpus().length;
 
-/* Argumentos de Entrada */
 const argvArray = [];
 process.argv.forEach((val, index) => {
   argvArray.push(val);

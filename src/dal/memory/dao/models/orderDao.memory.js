@@ -1,5 +1,7 @@
 const mockOrder = require("../../../../../__test__/mock/orders.mock.js");
 
+const { loggerError } = require("../../../../logger/log4js.js");
+
 module.exports = class {
   constructor() {
     this.orders = mockOrder;
@@ -9,7 +11,7 @@ module.exports = class {
     try {
       await this.orders.push(order);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -18,7 +20,7 @@ module.exports = class {
       const response = await this.orders;
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -27,7 +29,7 @@ module.exports = class {
       const [response] = await this.orders.filter((order) => order._id == id);
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -37,15 +39,14 @@ module.exports = class {
       this.orders = response;
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
   async updateById(id, payload) {
     try {
-      // working!
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 };

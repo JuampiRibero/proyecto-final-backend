@@ -1,5 +1,7 @@
 const { productService } = require("./index.js");
 
+const { loggerError } = require("../logger/log4js.js");
+
 module.exports = class {
   async addProductsToSession(cart, session) {
     try {
@@ -50,7 +52,7 @@ module.exports = class {
         return session.cartSession;
       }
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
       const errorMsg = {
         message: "No se agregaron productos a la session",
         sesionFinded: false,

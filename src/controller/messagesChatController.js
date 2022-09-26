@@ -1,16 +1,18 @@
-const MessagesChatService = require("../services/messagesChat.js");
+const MessagesChatService = require("../services/messagesChatService.js");
 const messageChat = new MessagesChatService();
 
 const { normalize, schema } = require("normalizr");
 
+const { loggerError } = require("../logger/log4js.js");
+
 exports.createMsg = async (req, res, next) => {
   try {
     const msgCreated = await messageChat.createMessage(req.body);
-    res.json({ msg: "Message Chat created!", messageChat: msgCreated });
+    res.json({ msg: "Mensaje de chat creado!", messageChat: msgCreated });
   } catch (error) {
-    console.log(error);
+    loggerError.error(error);
     const errorMsg = {
-      message: "No se creó mensaje",
+      message: "No se creó el mensaje",
       mesgCreated: false,
       error: error,
     };
@@ -36,9 +38,9 @@ exports.getAllMsgChat = async (req, res, next) => {
     const normalizedChat = normalize(historyChat, chatSchema);
     res.render("./pages/chat");
   } catch (error) {
-    console.log(error);
+    loggerError.error(error);
     const errorMsg = {
-      message: "No se cargaron mensajes",
+      message: "No se cargaron los mensajes",
       mesgFounded: false,
       error: error,
     };
@@ -50,9 +52,9 @@ exports.getMsgByEmail = async (req, res, next) => {
   try {
     res.render("./pages/chat-by-email", { layout: "chat-private" });
   } catch (error) {
-    console.log(error);
+    loggerError.error(error);
     const errorMsg = {
-      message: "No se cargaron mensajes",
+      message: "No se cargaron los mensajes",
       mesgFounded: false,
       error: error,
     };

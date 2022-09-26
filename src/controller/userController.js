@@ -1,5 +1,7 @@
 const { createHash } = require("../auth/bcrypt/bcrypt.js");
 
+const { loggerError } = require("../logger/log4js.js");
+
 const userController = (service) => {
   return {
     createUser: async (req, res, next) => {
@@ -18,9 +20,9 @@ const userController = (service) => {
         await service.createUser(userToCreate);
         res.status(200).json({ message: "Usuario creado" });
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
-          message: `No se creo usuario.`,
+          message: `No se creo el usuario.`,
           userCreated: false,
           error: error,
         };
@@ -33,9 +35,9 @@ const userController = (service) => {
         const response = await service.findUsers();
         res.status(200).json(response);
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
-          message: `No se encontraron usuarios.`,
+          message: `No se encontraron los usuarios.`,
           userFounded: false,
           error: error,
         };
@@ -49,9 +51,9 @@ const userController = (service) => {
         const response = await service.findUserById(id);
         res.status(200).json(response);
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
-          message: `No se encontró usuario con id ${id}.`,
+          message: `No se encontró el usuario con id ${id}.`,
           userFinded: false,
           error: error,
         };
@@ -65,9 +67,9 @@ const userController = (service) => {
         await service.deleteUserById(id);
         res.status(200).json({ msg: `Usuario ${id} borrado.` });
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
-          message: `No se borro usuario con id ${id}.`,
+          message: `No se borro el usuario con id ${id}.`,
           userDeleted: false,
           error: error,
         };
@@ -82,9 +84,9 @@ const userController = (service) => {
         await service.updateUserById(id, body);
         res.status(200).json({ msg: `Usuario ${id} actualizado` });
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
-          message: `No se actualizó usuario con id ${id}.`,
+          message: `No se actualizó el usuario con id ${id}.`,
           userUpdated: false,
           error: error,
         };
@@ -98,9 +100,9 @@ const userController = (service) => {
         const response = await service.findUserByEmail(email);
         res.status(200).json(response);
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
-          message: `No se encontró usuario con email ${email}.`,
+          message: `No se encontró el usuario con email ${email}.`,
           userFinded: false,
           error: error,
         };

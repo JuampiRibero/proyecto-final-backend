@@ -1,5 +1,3 @@
-console.log("Login.js working!");
-
 const getCookie = document.cookie;
 
 const nameUser = getCookie.slice(13);

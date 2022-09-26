@@ -14,7 +14,6 @@
       <tr id="{{this.product.id}}-tr">
         <td>{{this.product.id}}</td>
         <td>{{this.product.title}}</td>
-        {{!-- <td>{{this.quantity}}</td> --}}
         <td>
           <button class="btn btn-primary btn-rest" onclick="restQuantity('{{this.product.id}}')">- </button>
           <span id={{this.product.id}} class="quantity-product">{{this.quantity}}</span>

@@ -25,7 +25,7 @@ const productController = (service) => {
       } catch (error) {
         loggerError.error(error);
         const errorMsg = {
-          message: "No se cargó producto",
+          message: "No se cargó el producto",
           productCreated: false,
           error: error,
         };
@@ -41,7 +41,7 @@ const productController = (service) => {
       } catch (error) {
         loggerError.error(error);
         const errorMsg = {
-          message: "No se encontraron productos",
+          message: "No se encontraron los productos",
           productsFinded: false,
           error: error,
         };
@@ -65,7 +65,7 @@ const productController = (service) => {
       } catch (error) {
         loggerError.error(error);
         const errorMsg = {
-          message: `No se encontró producto con id ${id}`,
+          message: `No se encontró el producto con id ${id}`,
           productFinded: false,
           error: error,
         };
@@ -88,7 +88,7 @@ const productController = (service) => {
       } catch (error) {
         loggerError.error(error);
         const errorMsg = {
-          message: "No se pudo modificar producto",
+          message: "No se pudo modificar el producto",
           productModify: false,
           error: error,
         };
@@ -102,11 +102,11 @@ const productController = (service) => {
       try {
         const id = req.params.id;
         await service.deleteProduct(id);
-        res.status(200).json({ msg: "Product deleted!" });
+        res.status(200).json({ msg: "Producto eliminado!" });
       } catch (error) {
         loggerError.error(error);
         const errorMsg = {
-          message: "No se pudo borrar producto",
+          message: "No se pudo borrar el producto",
           productsFinded: false,
           error: error,
         };
@@ -125,7 +125,7 @@ const productController = (service) => {
       } catch (error) {
         loggerError.error(error);
         const errorMsg = {
-          message: `No se encontraron productos con la categoria ${category}`,
+          message: `No se encontraron los productos con la categoria ${category}`,
           productsFinded: false,
           error: error,
         };
@@ -144,7 +144,7 @@ const productController = (service) => {
       } catch (error) {
         loggerError.error(error);
         const errorMsg = {
-          message: `No se encontraron productos con el título ${title}`,
+          message: `No se encontraron los productos con el título ${title}`,
           productsFinded: false,
           error: error,
         };
@@ -163,7 +163,7 @@ const productController = (service) => {
       } catch (error) {
         loggerError.error(error);
         const errorMsg = {
-          message: `No se encontraron productos con code ${code}`,
+          message: `No se encontraron los productos con code ${code}`,
           productsFinded: false,
           error: error,
         };
@@ -174,7 +174,7 @@ const productController = (service) => {
     getByPrice: async (req, res, next) => {
       try {
         loggerDefault.info(
-          `El usuario quiere productos entre precio: ${req.query.minvalue} y ${req.query.maxvalue}`
+          `El usuario quiere los productos entre precio: ${req.query.minvalue} y ${req.query.maxvalue}`
         );
 
         loggerDefault.info(req.query);
@@ -183,7 +183,7 @@ const productController = (service) => {
           req.query.minvalue === undefined ||
           req.query.maxvalue === undefined
         ) {
-          res.status(200).render("./pages/search-products");
+          res.status(200).render("./pages/by-price-products");
         } else {
           const pricemin = parseInt(req.query.minvalue);
           const pricemax = parseInt(req.query.maxvalue);
@@ -196,7 +196,7 @@ const productController = (service) => {
       } catch (error) {
         loggerError.error(error);
         const errorMsg = {
-          message: `No se encontraron productos con ese rango de valores`,
+          message: `No se encontraron los productos con ese rango de valores`,
           productsFinded: false,
           error: error,
         };
@@ -211,7 +211,7 @@ const productController = (service) => {
         const stockmin = parseInt(req.query.stockmin);
         const stockmax = parseInt(req.query.stockmax);
         loggerDefault.info(
-          `El usuario quiere productos entre stock: ${stockmin} y ${stockmax}`
+          `El usuario quiere los productos entre stock: ${stockmin} y ${stockmax}`
         );
         const productsRetrieved = await service.getProductByStock(
           stockmin,
@@ -221,7 +221,7 @@ const productController = (service) => {
       } catch (error) {
         loggerError.error(error);
         const errorMsg = {
-          message: `No se encontraron productos con ese rango de stock`,
+          message: `No se encontraron los productos con ese rango de stock`,
           productsFinded: false,
           error: error,
         };

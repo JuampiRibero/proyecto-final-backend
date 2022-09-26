@@ -6,6 +6,8 @@ const {
 
 const client = require("twilio")(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 
+const { loggerDefault ,loggerError } = require("../logger/log4js.js");
+
 module.exports = (text, number) => {
   client.messages
     .create({
@@ -13,6 +15,6 @@ module.exports = (text, number) => {
       from: `whatsapp:${TWILIO_NUMBER_WHATSAPP}`,
       to: `whatsapp:${number}`,
     })
-    .then((message) => console.log(message.sid))
-    .catch(console.log);
+    .then((message) => loggerDefault.info(message.sid))
+    .catch(loggerError.error);
 };

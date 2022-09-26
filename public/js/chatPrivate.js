@@ -1,4 +1,3 @@
-console.log("ChatPrivate Working!");
 const socket = io();
 
 socket.on("list-msg-chat-private", (data) => {

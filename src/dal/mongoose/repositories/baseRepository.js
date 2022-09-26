@@ -1,3 +1,5 @@
+const { loggerError } = require("../../../logger/log4js.js");
+
 class BaseRepository {
   constructor(model) {
     this.model = model;
@@ -8,7 +10,7 @@ class BaseRepository {
       const elements = await this.model.find();
       return elements;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -17,7 +19,7 @@ class BaseRepository {
       const element = await this.model.findById(id);
       return element;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -26,7 +28,7 @@ class BaseRepository {
       const elementCreated = await this.model.create(element);
       return elementCreated;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -35,7 +37,7 @@ class BaseRepository {
       const elementDeleted = await this.model.findByIdAndDelete(id);
       return elementDeleted;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -44,7 +46,7 @@ class BaseRepository {
       const elementUpdated = await this.model.findByIdAndUpdate(id, payload);
       return elementUpdated;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 }

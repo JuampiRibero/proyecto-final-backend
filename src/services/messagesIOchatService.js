@@ -4,19 +4,21 @@ let { persistenceMessages } = persistenceFactory.newPersistence(PERSISTENCE);
 
 const { twilioSmsChat } = require("../sms/twilio");
 
+const { loggerDefault ,loggerError } = require("../logger/log4js.js");
+
 module.exports = (io, sessionMiddleware) => {
   io.use(function (socket, next) {
     sessionMiddleware(socket.request, socket.request.res, next);
   });
 
   io.on("connection", async (socket) => {
-    console.log(`Usuario conectado ${socket.id}`);
+    loggerDefault.info(`Usuario conectado ${socket.id}`);
 
     try {
       const allMsgChat = await persistenceMessages.getAllMsg();
       socket.emit("list-msg-chat", allMsgChat);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
 
     try {
@@ -25,7 +27,7 @@ module.exports = (io, sessionMiddleware) => {
 
       socket.emit("list-msg-chat-private", privateMsgChat);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
 
     socket.on("msg-chat", async (data) => {
@@ -35,19 +37,19 @@ module.exports = (io, sessionMiddleware) => {
         }
         await persistenceMessages.create(data);
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
       }
 
       try {
         const allMsgChat = await persistenceMessages.getAllMsg();
         io.emit("list-msg-chat", allMsgChat);
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
       }
     });
 
     socket.on("disconnect", () => {
-      console.log(`El usuario ${socket.id} se desconectó`);
+      loggerDefault.info(`El usuario ${socket.id} se desconectó`);
     });
   });
 

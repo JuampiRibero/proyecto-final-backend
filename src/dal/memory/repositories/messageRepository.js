@@ -1,4 +1,5 @@
 const BaseRepository = require("./baseRepository.js");
+const { loggerError } = require("../../../logger/log4js.js");
 
 class MessageRepository extends BaseRepository {
   constructor(model) {
@@ -11,7 +12,7 @@ class MessageRepository extends BaseRepository {
       const messages = await this.model;
       return messages;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 }

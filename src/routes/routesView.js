@@ -3,7 +3,7 @@ const { isAdmin } = require("../auth/isAdmin.js");
 
 const { productController } = require("../controller");
 
-const chatController = require("../controller/messagesChat.js");
+const chatController = require("../controller/messagesChatController.js");
 
 const cartController = require("../controller/cartController.js");
 
@@ -53,11 +53,11 @@ module.exports = (router) => {
       res.render("./pages/goodbye");
     })
 
-    .get("/error-login", (req, res, next) => {
-      res.render("./pages/error-login");
+    .get("/login-error", (req, res, next) => {
+      res.render("./pages/login-error");
     })
-    .get("/error-signup", (req, res, next) => {
-      res.render("./pages/error-signup");
+    .get("/signup-error", (req, res, next) => {
+      res.render("./pages/signup-error");
     })
 
     .get("/server-config", isAdmin, (req, res, next) => {

@@ -1,5 +1,6 @@
 const autocannon = require("autocannon");
 const { PassThrough } = require("stream");
+const { loggerTrace } = require("../logger/log4js.js");
 
 const run = (url) => {
   const buf = [];
@@ -17,8 +18,7 @@ const run = (url) => {
   inst.on("done", () => {
     process.stdout.write(Buffer.concat(buf));
   });
-
-  console.log("Running all benchmarks in");
+  loggerTrace.trace("Running all benchmarks in");
 };
 
 run("http://localhost:8080/info");

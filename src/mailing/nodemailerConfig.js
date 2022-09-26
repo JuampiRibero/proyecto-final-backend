@@ -1,12 +1,12 @@
 const nodemailer = require("nodemailer");
-const { GMAIL_USER, GMAIL_USER_PASS } = require("../config/globals.js");
+const { ETHEREAL_USER, ETHEREAL_USER_PASS, GMAIL_USER, GMAIL_USER_PASS } = require("../config/globals.js");
 
 const transporterEthereal = nodemailer.createTransport({
   host: "smtp.ethereal.email",
   port: 587,
   auth: {
-    user: "olaf.spencer99@ethereal.email",
-    pass: "Bmhw71bhgRbpYy2QgR",
+    user: ETHEREAL_USER,
+    pass: ETHEREAL_USER_PASS,
   },
 });
 

@@ -2,6 +2,8 @@ const { PERSISTENCE } = require("../config/globals.js");
 const persistenceFactory = require("../dal/factory.js");
 const { persistenceUser } = persistenceFactory.newPersistence(PERSISTENCE);
 
+const { loggerDefault ,loggerError } = require("../logger/log4js.js");
+
 module.exports = class {
   constructor() {
     this.userModel = persistenceUser;
@@ -11,7 +13,7 @@ module.exports = class {
     try {
       return await this.userModel.createUser(user);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
       const errorMsg = {
         message: `No se creo usuario.`,
         userCreated: false,
@@ -25,7 +27,7 @@ module.exports = class {
     try {
       return await this.userModel.findUsers();
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
       const errorMsg = {
         message: `No se encontraron usuarios.`,
         userFounded: false,
@@ -39,7 +41,7 @@ module.exports = class {
     try {
       return await this.userModel.findUserById(id);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
       const errorMsg = {
         message: `No se encontró usuario con id ${id}.`,
         userFinded: false,
@@ -53,7 +55,7 @@ module.exports = class {
     try {
       return await this.userModel.deleteUserById(id);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
       const errorMsg = {
         message: `No se creo borro usuario con id ${id}.`,
         userDeleted: false,
@@ -67,7 +69,7 @@ module.exports = class {
     try {
       return await this.userModel.updateUserById(id, payload);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
       const errorMsg = {
         message: `No se actualizó usuario con id ${id}.`,
         userUpdated: false,
@@ -81,7 +83,7 @@ module.exports = class {
     try {
       return await this.userModel.findUserByEmail(email);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
       const errorMsg = {
         message: `No se encontró usuario con email ${email}.`,
         userFinded: false,

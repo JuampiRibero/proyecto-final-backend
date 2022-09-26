@@ -9,13 +9,13 @@ const {
 module.exports = (router) => {
   router
     .post("/api/signup", signUpLocal, signUpLocalCallback)
-    .get("/failsignup", (req, res, next) => {
-      res.status(400).redirect("/error-signup");
+    .get("/error-signup", (req, res, next) => {
+      res.status(400).redirect("/signup-error");
     })
 
     .post("/api/login", logIn, logInCallback)
-    .get("/faillogin", (req, res, next) => {
-      res.status(400).redirect("/error-login");
+    .get("/error-login", (req, res, next) => {
+      res.status(400).redirect("/login-error");
     })
 
     .post("/api/logout", logOut);

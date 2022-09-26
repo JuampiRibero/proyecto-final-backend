@@ -1,4 +1,7 @@
-console.log("Checkout Cart Working!");
+const { loggerDefault, loggerError } = require("../../src/logger/log4js.js");
+
+loggerDefault.info("Checkout cart working!");
+
 const socket = io();
 
 function addQuantity(id) {
@@ -43,7 +46,7 @@ function buyCart() {
     alert("¡No hay productos en su carrito!");
   } else {
     alert("¡Pedido realizado!");
-    fetch("/api/order/create", {
+    fetch("/api/order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +56,7 @@ function buyCart() {
       .then((data) => {
         location.replace("/purchase-completed");
       })
-      .catch((e) => console.log(e));
+      .catch((e) => loggerError.error(e));
   }
 }
 
@@ -70,13 +73,13 @@ function addProducts() {
     }
   });
 
-  fetch("/api/cart/post-session", {
+  fetch("/api/cart", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(listOfProducts),
   }).then((data) => {
-    console.log("Petición realizada");
+    loggerDefault.info("Petición realizada");
   });
 }

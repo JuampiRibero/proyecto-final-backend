@@ -1,11 +1,13 @@
 const messagesChat = require("../dal/mongoose/schemas/messagesMongoose.js");
 
+const { loggerError } = require("../logger/log4js.js");
+
 module.exports = class {
   async createMessage(msg) {
     try {
       await messagesChat.create(msg);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -14,7 +16,7 @@ module.exports = class {
       const allMessage = await messagesChat.find().lean();
       return allMessage;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 };

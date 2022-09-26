@@ -2,6 +2,8 @@ const mockProduct = require("../../../../../__test__/mock/products.mock.js");
 const DTO = require("../../dto/dto.memory.js");
 const DTOmemory = new DTO();
 
+const { loggerTrace, loggerError } = require("../../../../logger/log4js.js");
+
 module.exports = class {
   constructor() {
     this.products = mockProduct;
@@ -13,18 +15,18 @@ module.exports = class {
       const productsDTOmemory = new DTOmemory(product);
       return productsDTOmemory;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
   async findById(id) {
     try {
       const [result] = this.products.filter((product) => product.id == id);
-      console.log(result);
+      loggerTrace.trace(result);
       const productsDTOmemory = DTOmemory.geyById(result);
       return await productsDTOmemory;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -34,7 +36,7 @@ module.exports = class {
       const productsDTOmemory = DTOmemory.getAllProducts(result);
       return productsDTOmemory;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -75,7 +77,7 @@ module.exports = class {
       const productsDTOmemory = new DTOmemory(this.products);
       return productsDTOmemory.data[productFinded];
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -85,7 +87,7 @@ module.exports = class {
       const productsDTOmemory = new DTOmemory(results);
       await productsDTOmemory.data;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -97,7 +99,7 @@ module.exports = class {
       const result = DTOmemory.getAllProducts(response);
       return result;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 };

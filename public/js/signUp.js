@@ -1,5 +1,3 @@
-console.log("SignUp working!");
-
 function onHandleInputChange() {
   const password = document.getElementById("password").value;
   const passwordConfirmed = document.getElementById("passwordConfirmed").value;

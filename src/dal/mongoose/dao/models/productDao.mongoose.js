@@ -1,6 +1,8 @@
 const { productModelMongoose } = require("../../schemas/productsMongoose.js");
 const DTOmongoose = require("../../dto/dto.mongoose.js");
 
+const { loggerError } = require("../../../../logger/log4js.js");
+
 module.exports = class {
   constructor() {
     this.products = productModelMongoose;
@@ -10,7 +12,7 @@ module.exports = class {
     try {
       return this.products.create(product);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -20,7 +22,7 @@ module.exports = class {
       const productsDTOmongoose = DTOmongoose.geyById(result);
       return productsDTOmongoose;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -30,7 +32,7 @@ module.exports = class {
       const productsDTOmemory = DTOmongoose.getAllProducts(result);
       return productsDTOmemory;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -38,7 +40,7 @@ module.exports = class {
     try {
       return this.products.findByIdAndUpdate(id, productUpdated, { new: true });
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -46,7 +48,7 @@ module.exports = class {
     try {
       return this.products.findOneAndDelete({ _id: id });
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -56,7 +58,7 @@ module.exports = class {
       const result = DTOmongoose.getAllProducts(response);
       return result;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -64,7 +66,7 @@ module.exports = class {
     try {
       return await this.products.find({ title: title });
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -72,7 +74,7 @@ module.exports = class {
     try {
       return await this.products.find({ code: code });
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -84,7 +86,7 @@ module.exports = class {
         })
         .lean();
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -94,7 +96,7 @@ module.exports = class {
         $and: [{ stock: { $gte: stockmin } }, { stock: { $lte: stockmax } }],
       });
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 };

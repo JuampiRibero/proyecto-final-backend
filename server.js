@@ -84,7 +84,7 @@ app.use("/static", express.static(__dirname + "/public"));
 const routesConfig = require("./src/routes/index.js");
 routesConfig(app);
 
-const socketConnection = require("./src/services/messagesIOchat.js");
+const socketConnection = require("./src/services/messagesIOchatService.js");
 socketConnection(io, sessionMiddleware);
 
 app.get("*", (req, res, next) => {

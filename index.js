@@ -10,8 +10,10 @@ const cluster = require("cluster");
 const numCPUs = require("os").cpus().length;
 const { IS_CLUSTER, PORT } = require("./src/config/globals.js");
 
+const { loggerDefault, loggerError } = require("./src/logger/log4js.js");
+
 if (IS_CLUSTER.toLowerCase() === "true") {
-  console.log("Server mode: CLUSTER");
+  loggerDefault.info("Server mode: CLUSTER");
 
   if (cluster.isMaster) {
     for (let i = 0; i < numCPUs; i++) {
@@ -19,7 +21,7 @@ if (IS_CLUSTER.toLowerCase() === "true") {
     }
 
     cluster.on("exit", (worker) => {
-      console.log(
+      loggerDefault.info(
         `Worker ${
           worker.process.pid
         } DIED at ${new Date().toLocaleDateString()}!`
@@ -28,23 +30,23 @@ if (IS_CLUSTER.toLowerCase() === "true") {
   } else {
     getConnection()
       .then((msg) => {
-        console.log(msg);
+        loggerDefault.info(msg);
         http.listen(PORT, () =>
-          console.log(`Working on ${PORT}! and procces id ${process.pid}`)
+          loggerDefault.info(`Working on ${PORT}! and procces id ${process.pid}`)
         );
       })
-      .catch((err) => console.log(err));
+      .catch((err) => loggerError.error(err));
   }
 } else {
-  console.log("Server mode: FORK");
+  loggerDefault.info("Server mode: FORK");
   getConnection()
     .then((msg) => {
-      console.log(msg);
+      loggerDefault.info(msg);
       http.listen(PORT, () =>
-        console.log(
+        loggerDefault.info(
           `Working on http://localhost:${PORT} and procces id ${process.pid}!`
         )
       );
     })
-    .catch((err) => console.log(err));
+    .catch((err) => loggerError.error(err));
 }

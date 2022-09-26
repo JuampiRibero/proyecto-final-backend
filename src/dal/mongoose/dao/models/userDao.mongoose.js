@@ -1,5 +1,7 @@
 const { userModel } = require("../../schemas/userMongoose.js");
 
+const { loggerError } = require("../../../../logger/log4js.js");
+
 module.exports = class {
   constructor() {
     this.user = userModel;
@@ -9,7 +11,7 @@ module.exports = class {
     try {
       return await this.user.find();
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -17,7 +19,7 @@ module.exports = class {
     try {
       return await this.user.findOne({ email: email });
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -25,7 +27,7 @@ module.exports = class {
     try {
       return await this.user.findById(id);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -33,7 +35,7 @@ module.exports = class {
     try {
       return await this.user.create(userToCreate);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -42,7 +44,7 @@ module.exports = class {
       const response = await this.user.findByIdAndRemove(id);
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -53,7 +55,7 @@ module.exports = class {
       });
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 };

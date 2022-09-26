@@ -6,6 +6,13 @@ const {
 
 const client = require("twilio")(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 
+const {
+  loggerWarn,
+  loggerTrace,
+  loggerDefault,
+  loggerError,
+} = require("../logger/log4js.js");
+
 module.exports = {
   twilioSmsChat: (user, text) => {
     client.messages
@@ -14,8 +21,8 @@ module.exports = {
         from: TWILIO_NUMBER,
         to: "+543534244751",
       })
-      .then((message) => console.log(message.sid))
-      .catch(console.log);
+      .then((message) => loggerTrace.trace(message.sid))
+      .catch(loggerError.error);
   },
 
   twilioSmsFinishBuy: (user, text) => {
@@ -25,7 +32,7 @@ module.exports = {
         from: TWILIO_NUMBER,
         to: "+543534244751",
       })
-      .then((message) => console.log(message.sid))
-      .catch(console.log);
+      .then((message) => loggerTrace.trace(message.sid))
+      .catch(loggerError.error);
   },
 };

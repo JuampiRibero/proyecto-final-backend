@@ -2,9 +2,10 @@ const { PERSISTENCE } = require("../config/globals.js");
 const { productService } = require("../services/index.js");
 
 const mailingService = require("../services/mailingService.js");
-const createHtml = require("../utils/ticketHTML.js");
-const whatsAppTwilio = require("../services/twilio.whatsapp.js");
+const whatsAppTwilio = require("../services/twilioWhatsAppService.js");
 const { twilioSmsFinishBuy } = require("../sms/twilio.js");
+
+const { loggerTrace, loggerError } = require("../logger/log4js.js");
 
 const orderController = (service) => {
   return {
@@ -27,15 +28,15 @@ const orderController = (service) => {
           });
         }
         const orderCreated = await service.createOrder(finalCart);
-        
+
         if (PERSISTENCE === "mongodb") {
           const emailSubject = `Nuevo pedido de: ${req.session.passport.user.name} @ mail: ${req.session.passport.user.email}`;
 
-          const emailBody = createHtml.createHtml(orderCreated);
+          const emailBody = orderCreated;
 
           await mailingService.mailingGmail({
             from: "Servidor de Node.js",
-            to: ["olaf.spencer99@ethereal.email", process.env.GMAIL_USER],
+            to: [process.env.GMAIL_USER, process.env.ETHEREAL_USER_PASS],
             subject: emailSubject,
             html: emailBody,
           });
@@ -50,9 +51,9 @@ const orderController = (service) => {
 
         res.status(201).render("./pages/welcome");
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
-          message: `No se pudo crear orden`,
+          message: `No se pudo crear la orden`,
           orderCreated: false,
           error: error,
         };
@@ -65,9 +66,9 @@ const orderController = (service) => {
         const response = await service.getAllOrders();
         res.status(200).json(response);
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
-          message: `No se encontró ordenes.`,
+          message: `No se encontraron las ordenes.`,
           orderFinded: false,
           error: error,
         };
@@ -77,12 +78,12 @@ const orderController = (service) => {
 
     getOneOrder: async (req, res, next) => {
       try {
-        console.log("Ingresó a getOneOrder");
+        loggerTrace.trace("Ingresó a getOneOrder");
         const { id } = req.params;
         const response = await service.getOneOrder(id);
         res.status(200).json(response);
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
           message: `No se encontró orden con id ${id}.`,
           orderFinded: false,
@@ -98,9 +99,9 @@ const orderController = (service) => {
         const response = await service.deleteOneOrder(id);
         res.status(200).json(response);
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
-          message: `No se encontró orden con id ${id}.`,
+          message: `No se encontró la orden con id ${id}.`,
           orderDeleted: false,
           error: error,
         };
@@ -115,9 +116,9 @@ const orderController = (service) => {
         const response = await service.updateOneOrder(id, body);
         res.status(200).json(response);
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
         const errorMsg = {
-          message: `No se encontró orden con id ${id}.`,
+          message: `No se encontró la orden con id ${id}.`,
           orderUpdated: false,
           error: error,
         };

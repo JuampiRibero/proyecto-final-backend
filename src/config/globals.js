@@ -2,6 +2,8 @@
 const {
   portCLI,
   mongouriCLI,
+  notifyMailEtherealCLI,
+  passMailEtherealCLI,
   notifyMailCLI,
   passMailCLI,
   expirationSessionCLI,
@@ -12,6 +14,12 @@ const {
 const PORT_MANUAL = portCLI === undefined ? process.env.PORT : portCLI;
 const MONGOURI =
   mongouriCLI === undefined ? process.env.MONGO_URI : mongouriCLI;
+const ETHEREALNOTIFYMAIL = 
+  notifyMailEtherealCLI === undefined ? process.env.ETHEREAL_USER : notifyMailEtherealCLI;
+const ETHEREALPASSMAIL =
+  expirationSessionCLI === undefined
+    ? process.env.ETHEREAL_USER_PASS
+    : passMailEtherealCLI;
 const NOTIFYMAIL =
   notifyMailCLI === undefined ? process.env.GMAIL_USER : notifyMailCLI;
 const PASSMAIL =
@@ -31,9 +39,10 @@ module.exports = {
   PORT: process.env.PORT || PORT_MANUAL,
   PERSISTENCE: PERSISTENCE,
   EXPIRATION_SESSION: EXPIRATIONSESSION,
+  ETHEREAL_USER: ETHEREALNOTIFYMAIL,
+  ETHEREAL_USER_PASS: ETHEREALPASSMAIL,
   GMAIL_USER: NOTIFYMAIL,
   GMAIL_USER_PASS: PASSMAIL,
-
   IS_CLUSTER: process.env.IS_CLUSTER,
   TWILIO_ACCOUNT_SID: process.env.TWILIO_ACCOUNT_SID,
   TWILIO_AUTH_TOKEN: process.env.TWILIO_AUTH_TOKEN,

@@ -1,9 +1,9 @@
-const CartSessionService = require("../services/cartSession.js");
+const CartSessionService = require("../services/cartSessionService.js");
 const cartSession = new CartSessionService();
 
 exports.postCartSession = async (req, res, next) => {
   await cartSession.addProductsToSession(req.body, req.session);
-  res.status(201).redirect("/api/cart/get-session");
+  res.status(201).redirect("/api/cart");
 };
 
 exports.getCartSession = async (req, res, next) => {

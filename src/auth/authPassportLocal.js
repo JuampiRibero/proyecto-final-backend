@@ -4,6 +4,7 @@ const { createHash, isValidPassword } = require("./bcrypt/bcrypt.js");
 const { PERSISTENCE } = require("../config/globals.js");
 const persistenceFactory = require("../dal/factory.js");
 let { persistenceUser } = persistenceFactory.newPersistence(PERSISTENCE);
+const { loggerError } = require("../logger/log4js.js");
 
 passport.use(
   "local-login",
@@ -19,24 +20,24 @@ passport.use(
           email: req.body.email,
         });
         if (!userFinded) {
-          console.log("No se encontró usuario");
+          loggerError.error("No se encontró usuario");
           return done(
             null,
             false,
-            console.log("mensaje", "Usuario no encontrado")
+            loggerError.error("mensaje", "Usuario no encontrado")
           );
         }
         if (!isValidPassword(req.body.password, userFinded.password)) {
-          console.log("Contraseña incorrecta");
+          loggerError.error("Contraseña incorrecta");
           return done(
             null,
             false,
-            console.log("mensaje", "Usuario o contraseña incorrecta")
+            loggerError.error("mensaje", "Usuario o contraseña incorrecta")
           );
         }
         return done(null, userFinded);
       } catch (error) {
-        console.log(error);
+        loggerError.error(error);
       }
     }
   )
@@ -59,7 +60,10 @@ passport.use(
           return done(
             null,
             false,
-            console.log("mensaje", "Hay un usuario registrado con su mail")
+            loggerError.error(
+              "mensaje",
+              "Hay un usuario registrado con su mail"
+            )
           );
         } else {
           const userToCreate = {
@@ -76,7 +80,7 @@ passport.use(
           return done(null, userToCreate);
         }
       } catch (err) {
-        console.log(err);
+        loggerError.error(err);
       }
     }
   )
@@ -91,7 +95,7 @@ passport.deserializeUser(async function (id, done) {
     const userFinded = persistenceUser.findUserById(id);
     return done(null, userFinded);
   } catch (err) {
-    console.log(err);
+    loggerError.error(err);
   }
 });
 

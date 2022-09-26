@@ -1,11 +1,11 @@
+const { loggerDefault } = require("../logger/log4js.js");
+
 class PersistenceFactory {
   newPersistence = (type) => {
     switch (type) {
-
-      
       /* PERSISTENCIA EN MEMORIA */
       case "memory":
-        console.log("[Persistence] : Memory");
+        loggerDefault.info("Persistence: Memory");
         const persistenceMemoryProduct = require("../dal/memory/dao/models/productDao.memory.js");
         const persistenceMemoryUser = require("../dal/memory/dao/models/userDao.memory.js");
         const persistenceMemoryOrder = require("../dal/memory/dao/models/orderDao.memory.js");
@@ -20,10 +20,9 @@ class PersistenceFactory {
           persistenceMessages: messagesRepository,
         };
 
-
       /* PERSISTENCIA EN MONGO DB */
       case "mongodb":
-        console.log("[Persistence] : MongoDB");
+        loggerDefault.info("Persistence: MongoDB");
         const persistenceMongoDBProduct = require("../dal/mongoose/dao/models/productDao.mongoose.js");
         const persistenceMongoDBUser = require("../dal/mongoose/dao/models/userDao.mongoose.js");
         const persistenceMongoDBOrder = require("../dal/mongoose/dao/models/orderDao.mongoose.js");
@@ -38,10 +37,9 @@ class PersistenceFactory {
           persistenceMessages: messagesRepositoryMoongose,
         };
 
-
       /* PERSISTENCIA EN DEFAULT: MEMORIA */
       default:
-        console.log("[Persistence] : Default => Memory");
+        loggerDefault.info("Persistence: Default → Memory");
         const persistenceDefaultProduct = require("../dal/memory/dao/models/productDao.memory.js");
         const persistenceDefaultUser = require("../dal/memory/dao/models/userDao.memory.js");
         const persistenceDefaultOrder = require("../dal/memory/dao/models/orderDao.memory.js");

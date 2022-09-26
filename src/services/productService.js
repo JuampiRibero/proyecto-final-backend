@@ -2,6 +2,8 @@ const { PERSISTENCE } = require("../config/globals.js");
 const persistenceFactory = require("../dal/factory.js");
 let { persistenceProduct } = persistenceFactory.newPersistence(PERSISTENCE);
 
+const { loggerError } = require("../logger/log4js.js");
+
 module.exports = class {
   constructor() {
     this.productModel = persistenceProduct;

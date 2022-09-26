@@ -1,3 +1,5 @@
+const { loggerError } = require("../../../logger/log4js.js");
+
 const BaseRepository = require("./baseRepository.js");
 
 class MessageRepository extends BaseRepository {
@@ -11,7 +13,7 @@ class MessageRepository extends BaseRepository {
       const messages = await this.model.find().lean();
       return messages;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -20,7 +22,7 @@ class MessageRepository extends BaseRepository {
       const response = await this.model.find({ "author.id": email });
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 }

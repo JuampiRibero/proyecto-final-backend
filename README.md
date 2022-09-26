@@ -1,5 +1,11 @@
 # Proyecto Final Backend
 
+App deployada en:
+
+```
+https://proyecto-final-backend-jpr.herokuapp.com/
+```
+
 ## Resumen del Desarrollo
 
 La aplicación fué desarrolla en **NodeJS** usando el framework **Express** y base de datos **MongoDB** en su versión online **MongoAtlas**. Para autenticación y autorización se utilizó **passport-local** junto **bcrypt** para encriptar las contraseñas. Las notificaciones enviadas por correo electrónico se manejan con **Nodemailer** y las enviadas por SMS y Whatsapp con **Twilio**. Como motor de plantillas se utilizó **Handlebars**. El chat está implementado con **Websocket**.
@@ -86,7 +92,7 @@ avatar: `/static/avatar/${req.file.filename}`,
 password: createHash(req.body.password),
 ```
 
-.get("/failsignup") → si hay error en el registro se redireccionada a .get("/error-sigunp") renderizando vista indicado que hubo un error. Si el usuario es creado correctamente se redirige a .get("/login") que renderiza la vista de login.
+.get("/error-signup") → si hay error en el registro se redireccionada a .get("/signup-error") renderizando vista indicado que hubo un error. Si el usuario es creado correctamente se redirige a .get("/login") que renderiza la vista de login.
 
 .post("/api/login") → se envia mediante req.body la información necesaria para poder iniciar sesión.
 
@@ -95,13 +101,13 @@ req.body.email
 req.body.password
 ```
 
-.get("/failogin") → si hay error en el login se redirecciona a .get("/error-login") renderizando vista indicando que hubo un error. Si el usuario se logea correctamente se redirige a .get("/productos/vista") que renderiza una vista con una tabla con todos los productos.
+.get("/error-login") → si hay error en el login se redirecciona a .get("/login-error") renderizando vista indicando que hubo un error. Si el usuario se logea correctamente se redirige a .get("/productos/vista") que renderiza una vista con una tabla con todos los productos.
 
 .post("/api/logout") → se deslogea el usuario, se destruye la sesion creada y se redirecciona a .get("/goodbye") que renderiza la vista de que ha terminado su sesión.
 
 ### routesCart
 
-.post("/api/cart/post-session") → recibe por req.body un array de objetos que contiene:
+.post("/api/cart") → recibe por req.body un array de objetos que contiene:
 
 ```
 {
@@ -112,11 +118,11 @@ req.body.password
 
 Si la sesion no tiene la propiedad cartSession la crea y agrega los productos encontrados. Si existe una cartSession busca si existen mismo productos en el cart para cambiarle la cantidad, y si no existen los agrega. Luego redirige a:
 
-.get("/api/cart/get-session") → captura el cartSession de nuestra sesion y renderiza la vista del carrito.
+.get("/api/cart") → captura el cartSession de nuestra sesion y renderiza la vista del carrito.
 
 ### routesOrder
 
-.post("/api/order/create") →  recibe por req.body un array de objetos que contiene:
+.post("/api/order") → recibe por req.body un array de objetos que contiene:
 
 ```
 {
@@ -147,7 +153,7 @@ Luego destruirá la propiedad cartSession y renderizará la página inicial.
 
 ### routesProducts
 
-.post("/api/product/create") → crea productos para que queden grabados. Recibe en su req.body:
+.post("/api/product") → crea productos para que queden grabados. Recibe en su req.body:
 
 ```
 {
@@ -175,12 +181,12 @@ Luego renderiza página de detalle de producto.
 
 .get("/api/product/") → Busca todos los productos. Luego renderiza página con todos los de producto.
 
-.patch("/api/product/update/:id") → Actualiza producto por id que ingresa mediante parámetro (req.params.id), y recibe por su body el campo que desea actualizar, ejemplo:
+.patch("/api/product/:id") → Actualiza producto por id que ingresa mediante parámetro (req.params.id), y recibe por su body el campo que desea actualizar, ejemplo:
 
 Producto a actualizar:
 
 ```
-/api/product/update/6144ca225dd28c2628026a3b
+/api/product/6144ca225dd28c2628026a3b
 ```
 
 Información que podrá actualizar:
@@ -201,10 +207,10 @@ Información que podrá actualizar:
 
 Devuelve un JSON con la información del producto actualizado.
 
-.delete("/api/product/delete/:id") → Borra producto de la tienda. Ingresa su id mediante req.params.id, ejemplo:
+.delete("/api/product/:id") → Borra producto de la tienda. Ingresa su id mediante req.params.id, ejemplo:
 
 ```
-/api/product/delete/6144ca225dd28c2628026a3b
+/api/product/6144ca225dd28c2628026a3b
 ```
 
 Devuelve un JSON con la información de que el producto ha sido eliminado.
@@ -212,14 +218,14 @@ Devuelve un JSON con la información de que el producto ha sido eliminado.
 .get("/api/product/category/:category") → Busca productos por su categoria. Recibe el mismo por parámetro (req.params.category), ejemplo:
 
 ```
-/api/product/category/accesorio
+/api/product/category/consolas
 ```
 
 Luego renderiza página con todos los productos que cumplan con dicha categoria.
 
 ### routesUser
 
-.post("/api/user/create") → recibe por req.body la información del usuario a crear:
+.post("/api/user") → recibe por req.body la información del usuario a crear:
 
 ```
 name: req.body.name,
@@ -232,7 +238,7 @@ avatar: req.file.filename,
 password: req.body.password,
 ```
 
-.get("/api/user/") → devuelve el listado de todos los usuarios.
+.get("/api/user") → devuelve el listado de todos los usuarios.
 
 .get("/api/user/:id") → devuelve usuario correspondiente al parametro id (req.params.id).
 
@@ -256,8 +262,8 @@ password: req.body.password,
 ### routesMessagesChat
 
 Si bien las rutas existen, el servicio de chat está implementado con **Websocket**.
-.get("/api/message/list") → renderiza una vista del chat.
-.post("/api/message/create") → recibe del req.body:
+.get("/api/message/list-messages") → renderiza una vista del chat.
+.post("/api/message/new-message") → recibe del req.body:
 
 ```
 {
@@ -303,9 +309,9 @@ Devuelve un JSON informando que el mensaje de chat se creo satisfactoriamente.
 
 .get("/goodbye") → renderiza pantalla de despedida o deslogueo.
 
-.get("/error-login") → renderiza pantalla de error de inicio de sesion.
+.get("/login-error") → renderiza pantalla de error de inicio de sesion.
 
-.get("/error-signup") → renderiza pantalla de error de registro.
+.get("/signup-error") → renderiza pantalla de error de registro.
 
 .get("/server-config") → renderiza pantalla de configuración de la APP si es ADMIN=TRUE.
 

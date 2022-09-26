@@ -1,7 +1,7 @@
-const messagesController = require("../controller/messagesChat.js");
+const messagesController = require("../controller/messagesChatController.js");
 module.exports = (router) => {
   router
-    .get("/api/message/list", messagesController.getAllMsgChat)
-    .post("/api/message/create", messagesController.createMsg);
+    .get("/api/message/list-messages", messagesController.getAllMsgChat)
+    .post("/api/message/new-message", messagesController.createMsg);
   return router;
 };

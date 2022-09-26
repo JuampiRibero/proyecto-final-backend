@@ -1,5 +1,7 @@
 const { cartModel } = require("../../schemas/cartMongoose.js");
 
+const { loggerError } = require("../../../../logger/log4js.js");
+
 module.exports = class {
   constructor() {
     this.orders = cartModel;
@@ -9,7 +11,7 @@ module.exports = class {
     try {
       return this.orders.create(order);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -17,7 +19,7 @@ module.exports = class {
     try {
       return await this.orders.find();
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -26,7 +28,7 @@ module.exports = class {
       const response = await this.orders.findById(id);
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -35,7 +37,7 @@ module.exports = class {
       const response = await this.orders.findByIdAndRemove(id);
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -46,7 +48,7 @@ module.exports = class {
       });
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 };

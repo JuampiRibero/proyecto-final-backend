@@ -1,5 +1,4 @@
 const socket = io();
-console.log("Index.js funcionando");
 
 /*Evento que escucha el cliente para construir el board del chat */
 socket.on("list-msg-chat", (data) => {
@@ -15,7 +14,6 @@ socket.on("list-msg-chat", (data) => {
   }
 });
 
-/*Esta función manda el mensaje de chat al servidor */
 function sendMsgChat() {
   let emailUser = document.getElementById("email").value;
 
@@ -23,8 +21,6 @@ function sendMsgChat() {
     alert("¡Ingrese un mail!");
   } else {
     let date = new Date().toLocaleString();
-    // let msg = document.getElementById("mensaje-chat").value;
-    // let chatMsg = { user: emailUser, msg: msg, date: date };
     let chatMsg = {
       author: {
         id: document.getElementById("email").value,

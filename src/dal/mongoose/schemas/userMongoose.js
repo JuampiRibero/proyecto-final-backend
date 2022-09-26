@@ -2,7 +2,6 @@ const { Schema, model } = require("mongoose");
 
 const { cartSchema } = require("./cartMongoose.js");
 
-// Estructura del documento en MongoDB a través de Mongoose
 const userSchema = new Schema({
   admin: { type: Boolean, require: true, default: false },
   name: { type: String, required: true, max: 40 },

@@ -1,5 +1,3 @@
-console.log("Session Cart working!");
-
 function addQuantity(id) {
   let quantity = document.getElementById(id);
   let quantityNumber = Number(quantity.textContent);
@@ -31,7 +29,7 @@ function addProducts() {
     }
   });
 
-  fetch("/api/cart/post-session", {
+  fetch("/api/cart", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

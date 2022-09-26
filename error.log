@@ -6,3 +6,839 @@
     at module.exports.createProduct (C:\Proyectos\proyecto-final-backend\src\services\productService.js:18:7)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
     at async createProduct (C:\Proyectos\proyecto-final-backend\src\controller\productController.js:23:9)
+[2022-09-25T16:22:13.667] [ERROR] myError - Contraseña incorrecta
+[2022-09-25T16:22:13.670] [ERROR] myError - mensaje Usuario o contraseña incorrecta
+[2022-09-25T17:10:00.242] [ERROR] myError - ReferenceError: loggerDefault is not defined
+    at C:\Proyectos\proyecto-final-backend\index.js:44:7
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T18:36:07.578] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T18:36:07.589] [ERROR] myError - ReferenceError: res is not defined
+    at module.exports.createOrder (C:\Proyectos\proyecto-final-backend\src\services\orderService.js:22:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async createOrder (C:\Proyectos\proyecto-final-backend\src\controller\orderController.js:31:30)
+[2022-09-25T18:40:59.809] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T18:40:59.820] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'productsOnCart')
+    at Object.exports.createHtml (C:\Proyectos\proyecto-final-backend\src\utils\ticketHTML.js:3:8)
+    at createOrder (C:\Proyectos\proyecto-final-backend\src\controller\orderController.js:36:40)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T18:49:57.811] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T18:49:57.822] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'getProductsFromSession')
+    at Object.exports.createHtml (C:\Proyectos\proyecto-final-backend\src\utils\ticketHTML.js:3:8)
+    at createOrder (C:\Proyectos\proyecto-final-backend\src\controller\orderController.js:36:40)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T18:52:12.856] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T18:52:12.871] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'productsOnCart')
+    at Object.exports.createHtml (C:\Proyectos\proyecto-final-backend\src\utils\ticketHTML.js:5:8)
+    at createOrder (C:\Proyectos\proyecto-final-backend\src\controller\orderController.js:36:40)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T18:55:54.399] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T18:55:54.410] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'forEach')
+    at Object.exports.createHtml (C:\Proyectos\proyecto-final-backend\src\utils\ticketHTML.js:3:8)
+    at createOrder (C:\Proyectos\proyecto-final-backend\src\controller\orderController.js:36:40)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:00:00.822] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T19:00:03.488] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T19:03:28.773] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T19:03:30.181] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T19:39:15.407] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:48:09.264] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T19:48:11.338] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:48:11.438] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T19:48:12.638] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:49:48.735] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T19:49:49.789] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:49:49.947] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T19:49:51.118] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:49:58.555] [ERROR] myError - Contraseña incorrecta
+[2022-09-25T19:49:58.556] [ERROR] myError - mensaje Usuario o contraseña incorrecta
+[2022-09-25T19:50:00.497] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:50:02.144] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:50:28.975] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T19:50:28.986] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'forEach')
+    at Object.exports.createHtml (C:\Proyectos\proyecto-final-backend\src\utils\ticketHTML.js:3:8)
+    at createOrder (C:\Proyectos\proyecto-final-backend\src\controller\orderController.js:36:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:53:16.758] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T19:53:16.770] [ERROR] myError - TypeError: createHtml is not a function
+    at createOrder (C:\Proyectos\proyecto-final-backend\src\controller\orderController.js:36:29)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:56:18.376] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T19:56:18.387] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'productsOnCart')
+    at Object.exports.createHtml (C:\Proyectos\proyecto-final-backend\src\utils\ticketHTML.js:3:8)
+    at createOrder (C:\Proyectos\proyecto-final-backend\src\controller\orderController.js:36:40)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T19:59:57.317] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T19:59:57.327] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'forEach')
+    at Object.exports.createHtml (C:\Proyectos\proyecto-final-backend\src\utils\ticketHTML.js:3:18)
+    at createOrder (C:\Proyectos\proyecto-final-backend\src\controller\orderController.js:36:40)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T20:09:18.159] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T20:09:18.170] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'productsOnCart')
+    at Object.exports.createHtml (C:\Proyectos\proyecto-final-backend\src\utils\ticketHTML.js:3:8)
+    at createOrder (C:\Proyectos\proyecto-final-backend\src\controller\orderController.js:36:40)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T20:12:08.436] [ERROR] myError - Error: Orders validation failed: timestamp: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+    at ValidationError.inspect (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\error\validation.js:49:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Proyectos\proyecto-final-backend\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    timestamp: CastError: Cast to date failed for value "25/9/2022" (type string) at path "timestamp"
+        at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:354:11)
+        at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+        at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+        at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+        at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+        at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7
+        at Array.forEach (<anonymous>) {
+      stringValue: '"25/9/2022"',
+      messageFormat: undefined,
+      kind: 'date',
+      value: '25/9/2022',
+      path: 'timestamp',
+      reason: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+      
+        assert.ok(false)
+      
+          at castDate (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\date.js:40:10)
+          at SchemaDate.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\date.js:352:12)
+          at SchemaDate.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1367:22)
+          at model.$set (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:1092:16)
+          at model.Document (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\document.js:166:12)
+          at model.Model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:119:12)
+          at new model (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:4999:15)
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3160:22
+          at C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\model.js:3195:7 {
+        generatedMessage: true,
+        code: 'ERR_ASSERTION',
+        actual: false,
+        expected: true,
+        operator: '=='
+      },
+      valueType: 'string'
+    }
+  },
+  _message: 'Orders validation failed'
+}
+[2022-09-25T20:12:11.574] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T20:34:55.265] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T20:34:56.679] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T20:36:05.747] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T20:36:17.092] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T20:36:18.713] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T20:36:31.559] [ERROR] myError - Contraseña incorrecta
+[2022-09-25T20:36:31.560] [ERROR] myError - mensaje Usuario o contraseña incorrecta
+[2022-09-25T20:36:33.614] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T20:36:34.807] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T20:40:58.982] [ERROR] myError - CastError: Cast to ObjectId failed for value "price" (type string) at path "_id" for model "Product"
+    at model.Query.exec (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\query.js:4884:21)
+    at model.Query.Query.then (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\query.js:4983:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  messageFormat: undefined,
+  stringValue: '"price"',
+  kind: 'ObjectId',
+  value: 'price',
+  path: '_id',
+  reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new BSONTypeError (C:\Proyectos\proyecto-final-backend\node_modules\bson\lib\error.js:41:28)
+      at new ObjectId (C:\Proyectos\proyecto-final-backend\node_modules\bson\lib\objectid.js:67:23)
+      at castObjectId (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schema\objectid.js:246:12)
+      at ObjectId.SchemaType.applySetters (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1201:12)
+      at ObjectId.SchemaType._castForQuery (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1648:15)
+      at ObjectId.SchemaType.castForQuery (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1636:15)
+      at ObjectId.SchemaType.castForQueryWrapper (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\schematype.js:1612:20)
+      at cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\cast.js:347:32)
+      at model.Query.Query.cast (C:\Proyectos\proyecto-final-backend\node_modules\mongoose\lib\query.js:5312:12),
+  valueType: 'string'
+}
+[2022-09-25T20:41:07.217] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T20:41:08.734] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T20:41:09.958] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T22:55:00.875] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T22:55:02.187] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T22:55:03.648] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T22:55:03.991] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T23:24:43.938] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T23:24:45.121] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-09-25T23:24:45.441] [ERROR] myError - Error: self signed certificate in certificate chain
+    at TLSSocket.onConnectSecure (node:_tls_wrap:1532:34)
+    at TLSSocket.emit (node:events:527:28)
+    at TLSSocket._finishInit (node:_tls_wrap:946:8)
+    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:727:12) {
+  code: 'ESOCKET',
+  command: 'CONN'
+}
+[2022-09-25T23:24:46.639] [ERROR] myError - TypeError: Cannot read properties of undefined (reading 'user')
+    at Namespace.<anonymous> (C:\Proyectos\proyecto-final-backend\src\services\messagesIOchatService.js:25:52)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

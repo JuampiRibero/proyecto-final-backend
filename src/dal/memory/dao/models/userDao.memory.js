@@ -1,5 +1,7 @@
 const userModel = require("../../../../../__test__/mock/user.mock.js");
 
+const { loggerTrace, loggerError } = require("../../../../logger/log4js.js");
+
 module.exports = class {
   constructor() {
     this.users = userModel;
@@ -10,7 +12,7 @@ module.exports = class {
       const response = await this.users;
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -22,7 +24,7 @@ module.exports = class {
       }
       return result;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -31,7 +33,7 @@ module.exports = class {
       const [result] = await this.users.filter((user) => user._id == id);
       return result;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -39,18 +41,18 @@ module.exports = class {
     try {
       return await this.users.push(userToCreate);
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
   async deleteUserById(id) {
     try {
       const response = await this.users.filter((user) => user._id != id);
-      console.log(response);
+      loggerTrace.trace(response);
       this.users = response;
       return response;
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 
@@ -91,7 +93,7 @@ module.exports = class {
             : payload.password;
       }
     } catch (error) {
-      console.log(error);
+      loggerError.error(error);
     }
   }
 };
