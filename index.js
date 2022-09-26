@@ -32,7 +32,7 @@ if (IS_CLUSTER.toLowerCase() === "true") {
       .then((msg) => {
         loggerDefault.info(msg);
         http.listen(PORT, () =>
-          loggerDefault.info(`Working on ${PORT}! and procces id ${process.pid}`)
+          loggerDefault.info(`Working on http://localhost:${PORT} and procces id ${process.pid}`)
         );
       })
       .catch((err) => loggerError.error(err));

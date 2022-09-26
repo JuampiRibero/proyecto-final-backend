@@ -35,6 +35,14 @@ npm i
 
 En **.env.example** vas a encontrar todo lo necesario para iniciar la App.
 
+## Inicio rápido del Servidor
+
+Con el archivo **production.env** completo de acuedo al **.env.example**, corré el siguiente comando:
+
+```
+npm start
+```
+
 ## Iniciar el Servidor
 
 - Modo producción, es necesario el archivo production.env:
@@ -174,7 +182,7 @@ Luego redirecciona a .get('/productos/agregar) que renderiza nuevamente la vista
 .get("/api/product/:id") → Busca productos por su id. Recibe el mismo por parámetro (req.params.id), ejemplo:
 
 ```
-/api/product/6144ca225dd28c2628026a3b
+/api/product/633080ed323d4678c551c4e6
 ```
 
 Luego renderiza página de detalle de producto.
@@ -186,7 +194,7 @@ Luego renderiza página de detalle de producto.
 Producto a actualizar:
 
 ```
-/api/product/6144ca225dd28c2628026a3b
+/api/product/633080ed323d4678c551c4e6
 ```
 
 Información que podrá actualizar:
@@ -210,7 +218,7 @@ Devuelve un JSON con la información del producto actualizado.
 .delete("/api/product/:id") → Borra producto de la tienda. Ingresa su id mediante req.params.id, ejemplo:
 
 ```
-/api/product/6144ca225dd28c2628026a3b
+/api/product/633080ed323d4678c551c4e6
 ```
 
 Devuelve un JSON con la información de que el producto ha sido eliminado.
